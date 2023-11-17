@@ -188,11 +188,12 @@ class Zombie:
         SEQ_move_close_to_target_location=Sequence('Move close to target location',a1,a2_1)
         SEQ_move_far_to_target_location=Sequence('Move far to target location',a3,a2_2)
         SEQ_wander=Sequence('Wander',a3,a2_1)
-        #SEQ_chase_or_wander=Selector('추적 또는 배회',SEQ_chase_boy,SEQ_wander)
 
         SEQ_chase_boy=Sequence('소년 추적',c1,c2_1,a4_1)
         SEQ_run_away_from_boy=Sequence('소년으로부터 도망',c1,c2_2,a4_2)
         SEQ_partol=Sequence('순찰',a5,a2_1)
+
+        SEQ_chase_or_wander=Selector('추적 또는 배회',SEQ_chase_boy,SEQ_wander)
 
 
         root=SEL_chase_or_run_away_or_wander=Selector('소년을 추적하거나 도망 또는 순찰',SEQ_chase_boy,SEQ_run_away_from_boy,SEQ_partol)
